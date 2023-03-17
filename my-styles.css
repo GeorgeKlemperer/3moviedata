@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300&display=swap");
+
+html {
+  font-size: 16px;
+  font-family: "Newsreader", serif;
+}
+
+.pagetitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
+  background-color: #ff4297;
+  padding: 30px 0;
+  color: white;
+}
+
+.date {
+  background-color: #b980f2;
+  margin: 0;
+  padding: 10px;
+  color: black;
+}
+
+.name {
+  background-color: #6e3a51;
+  color: white;
+  margin: 0;
+  padding: 10px;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  justify-content: space-evenly;
+}
+/*A "Flexible Layout" must have a parent element with the display property set to flex.*/
+/* by default flex items are laid out in source order */
+
+@media (max-width: 600px) {
+  .flex-container {
+    flex-direction: column;
+    align-content: center;
+  }
+}
+/* @media is used in media queries to apply different styles in different conditions. Media queries can be used to check: width and height of viewport, width and height of device, orientation of device, and resolution.*/
+/* This @media rule will change "flex-container" to a column when viewport < "max-width"*/
+
+.addbutton {
+  margin: 20px;
+}
+
+.flex-container > div {
+  /*this will target <div> elements that are direct children (>) of .flex-container elements)*/
+  /* background-color: #f1f1f1; */
+  flex: auto;
+  width: 400px;
+  height: max-content;
+  /* max-width: 600px; */
+  margin: 10px;
+  text-align: left;
+  line-height: normal;
+  font-size: 30px;
+  word-wrap: break-word;
+  background-color: white;
+  border: 1px solid black;
+  background-position: center;
+  font-size: 25px;
+  line-height: normal;
+  /* border-radius: 25px; adds curves to cards */
+}
+
+.flex-container p {
+  margin: 30px;
+}
