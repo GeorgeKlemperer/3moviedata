@@ -17,9 +17,32 @@
       <p class="name">R. George Klemperer</p>
     </header>
 
-    <button class="addbutton">Click to add a movie!</button>
+    <div class="addmoviebox" id="addmoviebox">
+      <form>
+        <label for="moviename">Movie Name:</label> <br>
+        <input type="text" id="moviename" name="moviename" value="" required><br>
+        <label for="movieyear">Year:</label> <br>
+        <input type="number" id="movieyear" name="movieyear" value=""><br>
+        <label for="movierating">Rating:</label> <br>
+        <input type="text" id="movierating" name="movierating" value=""><br>
+        <label for="movieruntime">Runtime:</label> <br>
+        <input type="text" id="movieruntime" name="movieruntime" value=""><br>
+        <label for="movieplot">Plot:</label> <br>
+        <input type="text" id="movieplot" name="movieplot" value=""><br>
+        <label for="moviecast">Cast:</label> <br>
+        <input type="text" id="moviecast" name="moviecast" value=""><br>
 
-    <div id="flex-container" class="flex-container">
+        <!-- <br><input type="submit" value="Add movie!" onclick="addmovie()"> -->
+      </form> 
+        
+      <button type="submit" class="addbutton" onclick="addmovie()">Click to add movie!</button>
+      
+    </div> 
+
+    <button class="rearrangebutton" onclick="rearrangemovies()">Click to arrange movies by Year!</button>
+
+<!-- this is the flex container that will be populated by the JS function -->
+    <div id="flex-container" class="flex-container"> 
       </div>
 
 

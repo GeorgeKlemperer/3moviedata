@@ -29,6 +29,11 @@ html {
   padding: 10px;
 }
 
+.addmoviebox {
+  margin: 20px;
+  line-height: 1.2;
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +53,11 @@ html {
 /* This @media rule will change "flex-container" to a column when viewport < "max-width"*/
 
 .addbutton {
-  margin: 20px;
+  margin: 20px 0;
+}
+
+.rearrangebutton {
+  margin: 0;
 }
 
 .flex-container > div {

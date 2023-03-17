@@ -53,31 +53,40 @@ let movieData = {
   },
 };
 
-// //test code below here
 
-// for (key of Object.keys(movieData)) {
-//   // movieData[key]++;
-//   let moviename = Object.key;
+function addmovie (a,b,c,d,e,f) {
 
-//   // Creates <p> element element:
-//   const movieinfo = document.createElement("p");
-//   // Adds text to <p element:
-//   movieinfo.innerHTML =
-//     "<u>moviename</u><br>Year: " +
-//     movieData["The Darjeeling Limited"].year +
-//     "<br>Rating: " +
-//     movieData["The Darjeeling Limited"].rating +
-//     "<br>Runtime: " +
-//     movieData["The Darjeeling Limited"].runtime +
-//     "<br>Plot:<br>" +
-//     movieData["The Darjeeling Limited"].plot +
-//     "<br>Cast:<br>" +
-//     movieData["The Darjeeling Limited"].cast.join(", ");
-//   // Append "para" to another element:
-//   document.getElementById("movie1").appendChild(movieinfo);
-// }
+a = moviename.value
+b = movieyear.value
+c = movierating.value
+d = movieruntime.value
+e = movieplot.value
+f = moviecast.value;
 
-// test code above here
+
+// the || means "or"
+if (!a||!b||!c||!d||!e||!f) { 
+alert("Please fill in all fields");
+}
+else
+{
+const p = document.createElement("p");
+const br = document.createElement("br");
+const u = document.createElement("u");
+const div = document.createElement("div");
+
+// let input = document.getElementById("moviename");
+// movieData[input.value]
+
+var cardtext = `<u>${a}</u><br>Year: ${b}<br> Rating: ${c}<br>Runtime: ${d}<br> Plot: ${e}<br> Cast: ${f}`
+
+p.innerHTML = cardtext
+div.appendChild(p);
+
+document.getElementById("flex-container").appendChild(div);
+}
+// moviecard(movieData) // This function is called again so cards are re-made with new object key added
+}
 
 function moviecard (movieinfo) {
 for (key of Object.keys(movieinfo)) {
