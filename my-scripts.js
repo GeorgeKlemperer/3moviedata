@@ -66,7 +66,7 @@ f = moviecast.value;
 
 // the || means "or"
 if (!a||!b||!c||!d||!e||!f) { 
-alert("Please fill in all fields");
+alert("Please fill in all fields :)");
 }
 else
 {
@@ -86,6 +86,14 @@ div.appendChild(p);
 document.getElementById("flex-container").appendChild(div);
 }
 // moviecard(movieData) // This function is called again so cards are re-made with new object key added
+
+moviename.value = ""
+movieyear.value = ""
+movierating.value = ""
+movieruntime.value = ""
+movieplot.value = ""
+moviecast.value = ""
+// above code resets all fields so they are empty again
 }
 
 function moviecard (movieinfo) {
