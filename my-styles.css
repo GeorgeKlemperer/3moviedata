@@ -60,7 +60,8 @@ html {
   margin: 0;
 }
 
-.flex-container > div {
+/* I changed the name of this class to remove it, used to have 'card' formatting but changed to list. */
+.flex-containerxxx > div {
   /*this will target <div> elements that are direct children (>) of .flex-container elements)*/
   /* background-color: #f1f1f1; */
   flex: auto;
@@ -78,6 +79,14 @@ html {
   font-size: 25px;
   line-height: normal;
   /* border-radius: 25px; adds curves to cards */
+}
+
+.flex-container > div {
+  text-align: left;
+  line-height: normal;
+  font-size: 30px;
+  word-wrap: break-word;
+  background-color: white;
 }
 
 .flex-container p {
