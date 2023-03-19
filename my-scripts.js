@@ -61,7 +61,7 @@ function addmoviedict () {
   mrating = movierating.value
   mruntime = movieruntime.value
   mplot = movieplot.value
-  mcast = moviecast.value
+  mcast = moviecast.value//.split(',').map(castMember => castMember.trim()); //This turns value into an array
 
   let tempmoviedict = {
   // a = moviename.value
@@ -138,22 +138,27 @@ moviecast.value = ""
 
 
 function rearrangemovies(year) {
+  container_element.innerHTML = "";
 
- // Convert movieData object into an array of its values
-  const movieArray = Object.entries(movieData);
+  // Convert movieData object into an array of its values
+  const movieArray = Object.keys(movieData).map(key => {
+    return { ...movieData[key], title: key };
+  });
 
-  // Sort the array based on the year property
-  const sortedMovieArray = movieArray.sort((a, b) => a[1].year - b[1].year);
+    // Sort the array based on the year property in ascending order
+  const sortedMovieArray = movieArray.sort((p1, p2) =>
+  p1.year < p2.year ? -1 : p1.year > p2.year ? 1 : 0
+);
 
   // Create a new sorted movie object
   const sortedMovieData = sortedMovieArray.reduce((obj, item) => {
-    obj[item[0]] = item[1];
+    obj[item.title] = item;
     return obj;
   }, {});
 
-  // Call moviecard function with the sorted movie object
   moviecard(sortedMovieData);
 }
+
 
 
 // This function prints out Object input
@@ -163,6 +168,11 @@ container_element = document.getElementById("flex-container")
 
 // This code sets container element content to equal nothing (which basically resets the list)
 container_element.innerHTML = "";
+
+// Gives all movies a title property
+for (const key of Object.keys(movieData)) {
+  movieData[key].title = key;
+}
 
 
 for (key of Object.keys(movieinfo)) {
@@ -174,15 +184,13 @@ for (key of Object.keys(movieinfo)) {
   const plot = movieinfo[key].plot
 
 
-let cast;
-  if (typeof movieinfo[key].cast == "string") {
+  let cast;
+  if (Array.isArray(movieinfo[key].cast)) {
+    cast = movieinfo[key].cast.join(", ");
+  } else {
     cast = movieinfo[key].cast;
-    console.log("string");
   }
-  else
-  {cast = movieinfo[key].cast.join(", ")
-    console.log("not string")}
-    console.log(cast)
+
 // above if statement formats cast to have spaces if data type is an object (such as movieData list), else it will just print as string.
 
   const p = document.createElement("p");
