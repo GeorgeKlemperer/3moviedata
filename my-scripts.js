@@ -53,8 +53,48 @@ let movieData = {
   },
 };
 
+// this code adds form values to movieData object then reprints object.
+function addmoviedict () {
 
-function addmovie (a,b,c,d,e,f) {
+  mname = moviename.value
+  myear =  movieyear.value
+  mrating = movierating.value
+  mruntime = movieruntime.value
+  mplot = movieplot.value
+  mcast = moviecast.value
+
+  let tempmoviedict = {
+  // a = moviename.value
+  year: myear,
+  rating: mrating,
+  runtime: mruntime,
+  plot: mplot,
+  cast: mcast
+  }
+
+// the || means "or" and ! means blank
+  if (!mname||!myear||!mrating||!mruntime||!mplot||!mcast) { 
+    alert("Please fill in all fields! :)");
+    }
+    else
+    {
+  movieData[mname] = tempmoviedict
+
+  moviecard(movieData)
+
+  moviename.value = ""
+movieyear.value = ""
+movierating.value = ""
+movieruntime.value = ""
+movieplot.value = ""
+moviecast.value = ""
+console.log("all fine")
+    }
+// above code resets all fields so they are empty again
+}  
+
+// Old add movie function (simply printed out form values)
+function addmovie () {
 
 a = moviename.value
 b = movieyear.value
@@ -64,9 +104,9 @@ e = movieplot.value
 f = moviecast.value;
 
 
-// the || means "or"
+// the || means "or" and ! means blank
 if (!a||!b||!c||!d||!e||!f) { 
-alert("Please fill in all fields :)");
+alert("Please fill in all fields! :)");
 }
 else
 {
@@ -96,7 +136,35 @@ moviecast.value = ""
 // above code resets all fields so they are empty again
 }
 
+
+function rearrangemovies(year) {
+
+ // Convert movieData object into an array of its values
+  const movieArray = Object.entries(movieData);
+
+  // Sort the array based on the year property
+  const sortedMovieArray = movieArray.sort((a, b) => a[1].year - b[1].year);
+
+  // Create a new sorted movie object
+  const sortedMovieData = sortedMovieArray.reduce((obj, item) => {
+    obj[item[0]] = item[1];
+    return obj;
+  }, {});
+
+  // Call moviecard function with the sorted movie object
+  moviecard(sortedMovieData);
+}
+
+
+// This function prints out Object input
 function moviecard (movieinfo) {
+
+container_element = document.getElementById("flex-container")
+
+// This code sets container element content to equal nothing (which basically resets the list)
+container_element.innerHTML = "";
+
+
 for (key of Object.keys(movieinfo)) {
   console.log(key)
   const name = key
@@ -104,26 +172,42 @@ for (key of Object.keys(movieinfo)) {
   const rating = movieinfo[key].rating
   const runtime = movieinfo[key].runtime
   const plot = movieinfo[key].plot
-  const cast = movieinfo[key].cast.join(", ");
+
+
+let cast;
+  if (typeof movieinfo[key].cast == "string") {
+    cast = movieinfo[key].cast;
+    console.log("string");
+  }
+  else
+  {cast = movieinfo[key].cast.join(", ")
+    console.log("not string")}
+    console.log(cast)
+// above if statement formats cast to have spaces if data type is an object (such as movieData list), else it will just print as string.
 
   const p = document.createElement("p");
   const br = document.createElement("br");
   const u = document.createElement("u");
   const div = document.createElement("div");
 
-  var cardtext = `<u>${key}</u><br>Year: ${year}<br> Rating: ${rating}<br>Runtime: ${runtime}<br> Plot: ${plot}<br> Cast: ${cast}`
+  var cardtext = `<u>${key}</u><br>Year: ${year}<br> Rating: ${rating}<br>Runtime: ${runtime}<br> Plot: ${plot}<br> Cast: ${cast}.`
 
   p.innerHTML = cardtext
 
   div.appendChild(p);
 
 
-  document.getElementById("flex-container").appendChild(div);
+
+  container_element.appendChild(div);
 
   // console.log(name,year,rating,runtime,plot,cast)
 
 }
 }
+
+
+
+
 
 moviecard(movieData)
 
