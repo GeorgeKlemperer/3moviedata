@@ -157,6 +157,8 @@ function rearrangemovies(year) {
   }, {});
 
   moviecard(sortedMovieData);
+
+  movieData=sortedMovieData
 }
 
 
