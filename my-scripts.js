@@ -53,6 +53,12 @@ let movieData = {
   },
 };
 
+function updateMovieCount() {
+  const movieCountElement = document.getElementById('movieCount');
+  const count = Object.keys(movieData).length;
+  movieCountElement.innerHTML = `The only ${count} movies you need to see (and counting).`;
+}
+
 // this code adds form values to movieData object then reprints object.
 function addmoviedict () {
 
@@ -211,6 +217,9 @@ for (key of Object.keys(movieinfo)) {
   container_element.appendChild(div);
 
   // console.log(name,year,rating,runtime,plot,cast)
+
+   // Update the movie count
+   updateMovieCount();
 
 }
 }
