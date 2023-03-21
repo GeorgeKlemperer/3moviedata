@@ -6,10 +6,11 @@ html {
 }
 
 .pagetitle {
-  display: flex;
-  flex-wrap: wrap;
-  align-self: center;
-  justify-content: center;
+  /* display: flex;
+  flex-wrap: wrap; */
+  /* align-self: center;
+  justify-content: center; */
+  text-align: center;
   background-color: #ff4297;
   padding: 10px 0;
   color: white;
