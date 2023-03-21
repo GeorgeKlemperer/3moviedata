@@ -62,7 +62,24 @@ function updateMovieCount() {
 // this code adds form values to movieData object then reprints object.
 function addmoviedict () {
 
-  mname = moviename.value
+  //This code prevents interger object keys breaking sorting code, by forcing qoute marks around numbers.
+  if (isNaN(moviename.value)==false) {
+    mname = isNaN(moviename.value) ? key : `"${moviename.value}"`; 
+    console.log("returned false")
+    console.log(mname)
+    // return mname
+  }
+  else {
+    mname = moviename.value;
+    console.log("returned true")
+    console.log(mname)
+    // return mname;
+  }
+
+  
+  // mname = isNaN(moviename.value) ? key : `"${moviename.value}"`; 
+
+
   myear =  movieyear.value
   mrating = movierating.value
   mruntime = movieruntime.value
@@ -151,6 +168,9 @@ function rearrangemovies(year) {
     return { ...movieData[key], title: key };
   });
 
+  console.log("Original array")
+  console.log(movieArray)
+
     // Sort the array based on the year property in ascending order
   const sortedMovieArray = movieArray.sort((p1, p2) =>
   p1.year < p2.year ? -1 : p1.year > p2.year ? 1 : 0
@@ -161,6 +181,9 @@ function rearrangemovies(year) {
     obj[item.title] = item;
     return obj;
   }, {});
+
+  console.log("Sorted log")
+  console.log(sortedMovieArray)
 
   moviecard(sortedMovieData);
 
@@ -180,7 +203,12 @@ container_element.innerHTML = "";
 // Gives all movies a title property
 for (const key of Object.keys(movieData)) {
   movieData[key].title = key;
+
+  console.log("Key")
+  console.log(key)
+
 }
+
 
 
 for (key of Object.keys(movieinfo)) {
