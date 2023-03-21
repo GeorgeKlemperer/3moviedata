@@ -67,13 +67,11 @@ function addmoviedict () {
     mname = isNaN(moviename.value) ? key : `"${moviename.value}"`; 
     console.log("returned false")
     console.log(mname)
-    // return mname
   }
   else {
     mname = moviename.value;
     console.log("returned true")
     console.log(mname)
-    // return mname;
   }
 
   
