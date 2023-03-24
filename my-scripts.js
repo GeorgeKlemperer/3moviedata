@@ -221,7 +221,14 @@ function moviecard(movieinfo) {
 
     div.appendChild(p);
 
-    button.innerHTML = `Delete`
+    button.innerHTML = `Delete`;
+    // Attach the "click" event to your button
+    button.addEventListener("click", () => {
+      // When there is a "click"
+      // it shows an alert in the browser
+      // alert("Oh, you clicked me!"); //This commented out code was to test is click function was added.
+       button.parentNode.remove(); // This function removes the button's parent node.
+    });
     div.appendChild(button);
 
     container_element.appendChild(div);
