@@ -1,52 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Movie Data Project - R George Klemperer</title>
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="my-styles.css">
-    <meta name="description" content="Movie Data Project (Founders and Coders Application) - R George Klemperer">
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="my-styles.css" />
+    <meta
+      name="description"
+      content="Movie Data Project (Founders and Coders Application) - R George Klemperer"
+    />
   </head>
   <body>
-    <header>
-      <p id="date" style="text-align:right" class="date"></p>
-      <div class="pagetitle">
-        <h1 class="mdproject">Movie Data Project</h1>
-        <p id="movieCount">The only 4 movies you need to see.</p>
-      </div>
-      <p class="name">R. George Klemperer</p>
-    </header>
+    <div class="sidenav">
+      <div class="addmoviebox" id="addmoviebox">
+        <form>
+          <label for="moviename">Movie Name:</label> <br />
+          <input
+            type="string"
+            id="moviename"
+            name="moviename"
+            value=""
+            required
+          /><br />
+          <label for="movieyear">Year:</label> <br />
+          <input type="number" id="movieyear" name="movieyear" value="" /><br />
+          <label for="movierating">Rating:</label> <br />
+          <input
+            type="text"
+            id="movierating"
+            name="movierating"
+            value=""
+          /><br />
+          <label for="movieruntime">Runtime:</label> <br />
+          <input
+            type="number"
+            id="movieruntime"
+            name="movieruntime"
+            value=""
+          /><br />
+          <label for="movieplot">Plot:</label> <br />
+          <input type="text" id="movieplot" name="movieplot" value="" /><br />
+          <label for="moviecast">Cast:</label> <br />
+          <input type="text" id="moviecast" name="moviecast" value="" /><br />
 
-    <div class="addmoviebox" id="addmoviebox">
-      <form>
-        <label for="moviename">Movie Name:</label> <br>
-        <input type="string" id="moviename" name="moviename" value="" required><br>
-        <label for="movieyear">Year:</label> <br>
-        <input type="number" id="movieyear" name="movieyear" value=""><br>
-        <label for="movierating">Rating:</label> <br>
-        <input type="text" id="movierating" name="movierating" value=""><br>
-        <label for="movieruntime">Runtime:</label> <br>
-        <input type="number" id="movieruntime" name="movieruntime" value=""><br>
-        <label for="movieplot">Plot:</label> <br>
-        <input type="text" id="movieplot" name="movieplot" value=""><br>
-        <label for="moviecast">Cast:</label> <br>
-        <input type="text" id="moviecast" name="moviecast" value=""><br>
+          <!-- <br><input type="submit" value="Add movie!" onclick="addmovie()"> -->
+        </form>
 
-        <!-- <br><input type="submit" value="Add movie!" onclick="addmovie()"> -->
-      </form> 
         
-      <button type="submit" class="addbutton" onclick="addmoviedict()">Click to add movie!</button>
-      
-    </div> 
-
-    <button class="rearrangebutton" onclick="rearrangemovies()">Click to arrange movies by Year!</button>
-
-<!-- this is the flex container that will be populated by the JS function -->
-    <div id="flex-container" class="flex-container"> 
+        
       </div>
+      <button type="submit" class="addbutton" onclick="addmoviedict()">
+        Click to add movie!
+      </button>
+      <button class="rearrangebutton" onclick="rearrangemovies()">
+        Click to arrange<br>movies by Year!
+      </button>
+    </div>
 
+    <div id="maincontent">
+      <header>
+        <p id="date" style="text-align: right" class="date"></p>
+        <div class="pagetitle">
+          <h1 class="mdproject">Movie Data Project</h1>
+          <p id="movieCount">The only 4 movies you need to see.</p>
+        </div>
+        <p class="name">R. George Klemperer</p>
+      </header>
 
-    <script src="my-scripts.js"></script>
+      <!-- this is the flex container that will be populated by the JS function -->
+      <div id="flex-container" class="flex-container"></div>
+
+      <script src="my-scripts.js"></script>
+    </div>
   </body>
 </html>

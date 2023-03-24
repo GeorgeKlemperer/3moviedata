@@ -5,6 +5,23 @@ html {
   font-family: "Newsreader", serif;
 }
 
+.sidenav {
+  height: 100%;
+  width: 220px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  color: azure;
+}
+
+#maincontent {
+  margin-left: 220px; /* Same as the width of the sidenav */
+}
+
 .pagetitle {
   /* display: flex;
   flex-wrap: wrap; */
@@ -36,6 +53,9 @@ html {
 .addmoviebox {
   margin: 20px;
   line-height: 1.2;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* .flex-container {
@@ -59,10 +79,16 @@ html {
 
 .addbutton {
   margin: 20px 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .rearrangebutton {
-  margin: 0 20px;
+  margin: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* I changed the name of this class to remove it, used to have 'card' formatting but changed to list. */
