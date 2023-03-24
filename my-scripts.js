@@ -55,7 +55,12 @@ let movieData = {
 
 function updateMovieCount() {
   const movieCountElement = document.getElementById("movieCount");
-  const count = Object.keys(movieData).length;
+
+  // const count = Object.keys(movieData).length; // This code will count the number of keys in movieData
+
+  var element = document.getElementById("flex-container"); // This code will count number of child elements (<div>'s) in flex-container
+  var count = element.childElementCount;
+
   movieCountElement.innerHTML = `The only ${count} movies you need to see (and counting).`;
 }
 
@@ -227,7 +232,8 @@ function moviecard(movieinfo) {
       // When there is a "click"
       // it shows an alert in the browser
       // alert("Oh, you clicked me!"); //This commented out code was to test is click function was added.
-       button.parentNode.remove(); // This function removes the button's parent node.
+      button.parentNode.remove(); // This function removes the button's parent node.
+      updateMovieCount();
     });
     div.appendChild(button);
 
