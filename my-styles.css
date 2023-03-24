@@ -9,11 +9,11 @@ html {
   height: 100%;
   width: 220px;
   position: fixed;
-  z-index: 1;
-  top: 0;
+  z-index: 1; /*This sets the z-index of the element to 1, which means that it will appear on top of elements with a lower z-index.*/
+  top: 0; /* Top and left = 0 set position to top left of viewport*/
   left: 0;
   background-color: #111;
-  overflow-x: hidden;
+  overflow-x: hidden; /*This hides any horizontal overflow of content within the element.*/
   padding-top: 20px;
   color: azure;
 }
