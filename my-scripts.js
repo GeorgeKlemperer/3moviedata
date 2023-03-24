@@ -220,6 +220,8 @@ function moviecard(movieinfo) {
     p.innerHTML = cardtext;
 
     div.appendChild(p);
+
+    button.innerHTML = `Delete`
     div.appendChild(button);
 
     container_element.appendChild(div);
