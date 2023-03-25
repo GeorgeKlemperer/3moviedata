@@ -61,7 +61,13 @@ function updateMovieCount() {
   var element = document.getElementById("flex-container"); // This code will count number of child elements (<div>'s) in flex-container
   var count = element.childElementCount;
 
+
+if (count >=1) {
   movieCountElement.innerHTML = `The only ${count} movies you need to see (and counting).`;
+}
+else{
+  movieCountElement.innerHTML = `I guess you don't like movies then.`;
+}
 }
 
 // this code adds form values to movieData object then reprints object.
