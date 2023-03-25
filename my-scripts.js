@@ -232,6 +232,9 @@ function moviecard(movieinfo) {
       // When there is a "click"
       // it shows an alert in the browser
       // alert("Oh, you clicked me!"); //This commented out code was to test is click function was added.
+      const movieName = button.parentNode.querySelector("u").textContent;
+      delete movieData[movieName];
+
       button.parentNode.remove(); // This function removes the button's parent node.
       updateMovieCount();
     });
