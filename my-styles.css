@@ -119,8 +119,15 @@ html {
   word-wrap: break-word;
   background-color: white;
   text-align: left;
+  position: relative;
 }
 
 .flex-container p {
   margin: 30px;
+}
+
+.flex-container button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
 }
