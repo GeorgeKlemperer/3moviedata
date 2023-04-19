@@ -31,14 +31,14 @@ html {
   justify-content: center; */
   text-align: center;
   /* background-color: #ff4297; */
-  background-color: grey;
+  background-color: #CC3F0C;
   padding: 10px 0;
   color: white;
   font-size: 30px;
 }
 
 .date {
-  background-color: #b980f2;
+  background-color: #D8CBC7;
   margin: 0;
   padding: 10px;
   color: black;
@@ -46,7 +46,7 @@ html {
 }
 
 .name {
-  background-color: #6e3a51;
+  background-color: #9A6D38;
   color: white;
   margin: 0;
   padding: 10px;
