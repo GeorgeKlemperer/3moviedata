@@ -30,7 +30,8 @@ html {
   /* align-self: center;
   justify-content: center; */
   text-align: center;
-  background-color: #ff4297;
+  /* background-color: #ff4297; */
+  background-color: grey;
   padding: 10px 0;
   color: white;
   font-size: 30px;
