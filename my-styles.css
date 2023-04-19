@@ -131,3 +131,40 @@ html {
   top: 10px;
   right: 20px;
 }
+
+
+/* Edits webpage for media devices */
+@media (max-width: 800px) {
+  .sidenav {
+    height: 430px;
+    width: 100%;
+    position: absolute;
+    z-index: 1; /*This sets the z-index of the element to 1, which means that it will appear on top of elements with a lower z-index.*/
+    top: 0; /* Top and left = 0 set position to top left of viewport*/
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden; /*This hides any horizontal overflow of content within the element.*/
+    padding-top: 20px;
+    color: azure;
+  }
+
+  .addbutton {
+    margin: 20px 0;
+    position: relative;
+    left: 110px;
+    transform: translateX(-50%);
+  }
+  
+  .rearrangebutton {
+    margin: 0;
+    position: absolute;
+    left: 110px;
+    top: 360px;
+    transform: translateX(-50%);
+  }
+
+  #maincontent {
+    margin: 0 auto; 
+    margin-top: 470px; /* Same as the height of the sidenav */
+  }
+}
