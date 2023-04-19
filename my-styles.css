@@ -1,18 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300&display=swap");
 
-/* Forces landscape orientation on mobile phone */
-@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
-  html {
-    transform: rotate(-90deg);
-    transform-origin: left top;
-    width: 100vh;
-    height: 100vw;
-    overflow-x: hidden;
-    position: absolute;
-    top: 100%;
-    left: 0;
-  }
-}
 
 
 html {
@@ -145,4 +132,18 @@ html {
   position: absolute;
   top: 10px;
   right: 20px;
+}
+
+/* Forces landscape orientation on mobile phone */
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: portrait) {
+  html {
+    transform: rotate(-90deg);
+    transform-origin: left top;
+    width: 100vh;
+    height: 100vw;
+    overflow-x: hidden;
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
 }
