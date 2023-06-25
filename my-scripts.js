@@ -63,7 +63,7 @@ function updateMovieCount() {
 
 
 if (count >=1) {
-  movieCountElement.innerHTML = `The only ${count} movies you need to see (and counting).`;
+  movieCountElement.innerHTML = `Add your favourite movies!`;
 }
 else{
   movieCountElement.innerHTML = `I guess you don't like movies then.`;
